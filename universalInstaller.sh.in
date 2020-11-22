@@ -1,0 +1,25 @@
+#!/bin/bash
+
+MATCH=$(grep --text --line-number '^ARCHIVE:$' $0 | cut -d ':' -f 1)
+ARCHIVE_START=$((MATCH + 1))
+tail -n +$ARCHIVE_START $0 > archive.tar.gz
+mkdir -p /tmp/universalInstaller/
+tar xpvzf archive.tar.gz -C /tmp/universalInstaller > universalInstaller_installed_files
+rm -rf archive.tar.gz
+sed -i '1d' universalInstaller_installed_files
+sudo mkdir -p /opt/universalInstaller/
+sudo mv universalInstaller_installed_files /opt/universalInstaller/
+
+sudo cp -vRp /tmp/universalInstaller/* /usr/local/
+rm -rf /tmp/universalInstaller/
+
+echo "Your tool has been successfully installed by universalInstaller!"
+echo
+echo "Your tool requires some installed packages:"
+echo "    Ubuntu:"
+echo "        sudo apt-get install "
+echo "    CentOS:"
+echo "        sudo yum install "
+exit 0
+
+ARCHIVE:
