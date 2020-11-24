@@ -1,6 +1,19 @@
 ## universalInstaller
 universalInstaller can help to create bash scripts for installing your tools on any Linux distributions.
 
+## Requirements
+You should contain your tool to directory with structure:
+```
+/path/to/binaries/of/your/tool/
+|
+| -- bin/
+|    |
+|    | -- binaries/of/your/tool
+| -- lib/
+|    |
+|    | -- libs/of/your/tool
+```
+
 ## QuickStart
 ```
   git clone https://github.com/mperov/universalInstaller.git
