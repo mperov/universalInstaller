@@ -4,7 +4,7 @@ universalInstaller can help to create bash scripts for installing your tools on 
 ## Requirements
 You should contain your tool to directory with structure:
 ```
-/path/to/binaries/of/your/tool/
+/path/to/your/tool/
 |
 | -- bin/
 |    |
@@ -18,7 +18,7 @@ You should contain your tool to directory with structure:
 ```
   git clone https://github.com/mperov/universalInstaller.git
   # Build your tool
-  ./builder.sh /path/to/binaries/of/your/tool
+  ./builder.sh /path/to/your/tool
   # Run sudo ./universalInstaller.sh on target machine with Linux
   # There is uninstaller can remove your tool from target machine:
   sudo ./universalUninstaller.sh
