@@ -15,13 +15,17 @@ You should contain your tool to directory with structure:
 ```
 
 ## QuickStart
-```
-  git clone https://github.com/mperov/universalInstaller.git
-  # Build your tool
-  ./builder.sh /path/to/your/tool
-  # Run sudo ./universalInstaller.sh on target machine with Linux
-  # There is uninstaller can remove your tool from target machine:
-  sudo ./universalUninstaller.sh
-```
 
-`sudo` allows to install your tool to `/usr/local`
+#### on building Linux machine
+0. Build your tool
+1. `git clone https://github.com/mperov/universalInstaller.git`
+2. `cd universalInstaller/`
+3. `./builder.sh /path/to/your/tool`
+
+#### on target Linux machine
+1. `sudo ./universalInstaller.sh`
+2. There is uninstaller can remove your tool from target machine: `sudo ./universalUninstaller.sh` 
+
+## Don't worry
+
+`sudo` only allows to install your tool to `/usr/local`
